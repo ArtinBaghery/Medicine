@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="fas fa-pills">MediGuide</title>
+    <link href="styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
+    <link rel="icon" type="image/png" href="favicon.png">  
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="top-bar">
+                <div class="logo">
+                    <i class="fas fa-pills"></i>
+                    MediGuide
+                </div>
+                <div class="auth-buttons">
+                    <a href="#" class="btn btn-login">Login</a>
+                    <a class="btn btn-subscribe">Contact Us</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="https://www.betterhealth.vic.gov.au/health/healthyliving/How-drugs-affect-your-body"><i class="fas fa-stethoscope"></i> Conditions</a></li>
+                    <li><a href="https://medlineplus.gov/druginfo/drug_Aa.html"><i class="fas fa-capsules"></i> Drugs & Supplements</a></li>
+                    <li><a href="https://www.betterhealth.vic.gov.au/health/healthyliving/wellbeing"><i class="fas fa-heartbeat"></i> Well-Being</a></li>
+                    <li><a href="https://www.healthwords.ai/?utm_source=google&utm_medium=paid&utm_campaign=22540463031&utm_content=&utm_term=&gad_source=1&gad_campaignid=22546873175&gbraid=0AAAAAohr_Ggugl_OloX7euD7gKnNncwN0&gclid=CjwKCAjwmNLHBhA4EiwA3ts3mSqPKWxpk0cwAwm2yJcdmlzwtAigvrasUD67PpR3WCtzbXVeQHo4choCQcIQAvD_BwE"><i class="fas fa-search"></i> Symptom Checker</a></li>
+                    <li><a href="https://www.knowyourdoctor.com.cy/"><i class="fas fa-user-md"></i> Find a Doctor</a></li>
+                    <li><a href="https://www.mims.com/singapore/image/advancedsearch"><i class="fas fa-prescription"></i> Pill Identifier</a></li>
+                    <li><a href="#"><i class="fas fa-ellipsis-h"></i> More</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Comprehensive Drug Information</h1>
+                <p>Complete database of medications with detailed explanations about functions, uses, side effects, and drug interactions</p>
+                <a href="#" class="scroll-link hero-btn" data-target="drugSearch">Search Medications <i class="fas fa-search"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-content">
+            <!-- Left Column -->
+            <div class="left-column">
+                <div class="nav-buttons">
+                    <button class="nav-btn b-1 active" onclick="showSection('drugs')"><h2>Drug Categories</h2></button>
+                    <button class="nav-btn b-2" onclick="showSection('diseases')"><h2>Disease Categories</h2></button>
+                    <button class="nav-btn b-3" onclick="showSection('supplements')"><h2>Supplement Categories</h2></button>
+                </div>
+                <div class="separator"></div>
+                
+                
+                <!-- ==================== DRUG CATEGORIES ==================== -->
+                <div id="drugs" class="category-section active-section">
+                    <div class="drug-categories">
+
+                        <!-- Category 1 -->
+                        <div href="#" data-target="cardiovascular" class="category-card  scroll-link">
+                            <div class="category-header"><i class="fas fa-heart"></i>Cardiovascular Drugs</div>
+                            <ul class="category-list">
+                                <li>Blood Pressure Medications <span class="drug-count">24</span></li>
+                                <li>Cholesterol Drugs <span class="drug-count">18</span></li>
+                                <li>Anticoagulants <span class="drug-count">12</span></li>
+                                <li>Heart Failure Medications <span class="drug-count">9</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- Category 2 -->
+                        <div href="#" data-target="neurology" class="category-card  scroll-link"">
+                            <div class="category-header"><i class="fas fa-brain"></i>Neurology & Psychiatry</div>
+                            <ul class="category-list">
+                                <li>Antidepressants <span class="drug-count">32</span></li>
+                                <li>Anti-anxiety Medications <span class="drug-count">21</span></li>
+                                <li>Antipsychotics <span class="drug-count">15</span></li>
+                                <li>Sleep Aids <span class="drug-count">11</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- Category 3 -->
+                        <div href="#" data-target="respiratory" class="category-card  scroll-link">
+                            <div class="category-header"><i class="fas fa-lungs"></i>Respiratory Drugs</div>
+                            <ul class="category-list">
+                                <li>Asthma Medications <span class="drug-count">16</span></li>
+                                <li>Allergy Drugs <span class="drug-count">14</span></li>
+                                <li>Cold & Flu Medications <span class="drug-count">22</span></li>
+                                <li>Antibiotics <span class="drug-count">28</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- Category 4 -->
+                        <div href="#" data-target="bone" class="category-card  scroll-link">
+                            <div class="category-header"><i class="fas fa-bone"></i>Bone & Joint Medications</div>
+                            <ul class="category-list">
+                                <li>Osteoporosis Drugs <span class="drug-count">8</span></li>
+                                <li>Arthritis Medications <span class="drug-count">13</span></li>
+                                <li>Pain Relievers <span class="drug-count">19</span></li>
+                                <li>Anti-inflammatory Drugs <span class="drug-count">17</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- Category 5 -->
+                        <div href="#" data-target="hormonal" class="category-card  scroll-link">
+                            <div class="category-header"><i class="fas fa-dna"></i>Hormonal Drugs</div>
+                            <ul class="category-list">
+                                <li>Diabetes Medications <span class="drug-count">15</span></li>
+                                <li>Thyroid Drugs <span class="drug-count">7</span></li>
+                                <li>Contraceptives <span class="drug-count">12</span></li>
+                                <li>Steroids <span class="drug-count">10</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- Category 6 -->
+                        <div href="#" data-target="gastrointestinal" class="category-card  scroll-link">
+                            <div class="category-header"><i class="fas fa-utensils"></i>Gastrointestinal Drugs</div>
+                            <ul class="category-list">
+                                <li>Acid Reducers <span class="drug-count">14</span></li>
+                                <li>Laxatives <span class="drug-count">9</span></li>
+                                <li>Anti-nausea Drugs <span class="drug-count">11</span></li>
+                                <li>IBD Medications <span class="drug-count">8</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                        <!-- ==================== DISEASE CATEGORIES ==================== -->
+                        <div id="diseases" class="category-section">
+                            <div class="drug-categories">
+                                <!-- Category 1 -->
+                                <div class="category-card">
+                                    <div class="category-header"><i class="fas fa-virus"></i>Infectious Diseases</div>
+                                    <ul class="category-list">
+                                        <li>Viral Infections <span class="drug-count">20</span></li>
+                                        <li>Bacterial Infections <span class="drug-count">18</span></li>
+                                        <li>Parasitic Diseases <span class="drug-count">10</span></li>
+                                        <li>Fungal Infections <span class="drug-count">8</span></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Category 2 -->
+                                <div class="category-card">
+                                    <div class="category-header"><i class="fas fa-dna"></i>Genetic Disorders</div>
+                                    <ul class="category-list">
+                                        <li>Cystic Fibrosis <span class="drug-count">5</span></li>
+                                        <li>Hemophilia <span class="drug-count">3</span></li>
+                                        <li>Muscular Dystrophy <span class="drug-count">4</span></li>
+                                        <li>Sickle Cell Anemia <span class="drug-count">6</span></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Category 3 -->
+                                <div class="category-card">
+                                    <div class="category-header"><i class="fas fa-brain"></i>Neurological Disorders</div>
+                                    <ul class="category-list">
+                                        <li>Alzheimer’s Disease <span class="drug-count">12</span></li>
+                                        <li>Epilepsy <span class="drug-count">9</span></li>
+                                        <li>Parkinson’s Disease <span class="drug-count">7</span></li>
+                                        <li>Multiple Sclerosis <span class="drug-count">5</span></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Category 4 -->
+                                <div class="category-card">
+                                    <div class="category-header"><i class="fas fa-lungs"></i>Respiratory Diseases</div>
+                                    <ul class="category-list">
+                                        <li>Asthma <span class="drug-count">14</span></li>
+                                        <li>Chronic Bronchitis <span class="drug-count">10</span></li>
+                                        <li>Emphysema <span class="drug-count">8</span></li>
+                                        <li>Pneumonia <span class="drug-count">12</span></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Category 5 -->
+                                <div class="category-card">
+                                    <div class="category-header"><i class="fas fa-utensils"></i>Gastrointestinal Diseases</div>
+                                    <ul class="category-list">
+                                        <li>IBS <span class="drug-count">11</span></li>
+                                        <li>GERD <span class="drug-count">9</span></li>
+                                        <li>Ulcers <span class="drug-count">7</span></li>
+                                        <li>Inflammatory Bowel Disease <span class="drug-count">6</span></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Category 6 -->
+                                <div class="category-card">
+                                    <div class="category-header"><i class="fas fa-bone"></i>Musculoskeletal Disorders</div>
+                                    <ul class="category-list">
+                                        <li>Osteoporosis <span class="drug-count">8</span></li>
+                                        <li>Arthritis <span class="drug-count">13</span></li>
+                                        <li>Back Pain <span class="drug-count">10</span></li>
+                                        <li>Fibromyalgia <span class="drug-count">6</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- ==================== SUPPLEMENT CATEGORIES ==================== -->
+                        <div id="supplements" class="category-section">
+                            <div class="drug-categories">
+
+                                <!-- Category 1 -->
+                                <div class="category-card">
+                                    <div class="category-header"><i class="fas fa-apple-alt"></i>Vitamins</div>
+                                    <ul class="category-list">
+                                        <li>Vitamin A <span class="drug-count">8</span></li>
+                                        <li>Vitamin B Complex <span class="drug-count">10</span></li>
+                                        <li>Vitamin C <span class="drug-count">7</span></li>
+                                        <li>Vitamin D <span class="drug-count">9</span></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Category 2 -->
+                                <div class="category-card">
+                                    <div class="category-header"><i class="fas fa-capsules"></i>Minerals</div>
+                                    <ul class="category-list">
+                                        <li>Iron <span class="drug-count">6</span></li>
+                                        <li>Calcium <span class="drug-count">8</span></li>
+                                        <li>Zinc <span class="drug-count">5</span></li>
+                                        <li>Magnesium <span class="drug-count">7</span></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Category 3 -->
+                                <div class="category-card">
+                                    <div class="category-header"><i class="fas fa-dumbbell"></i>Performance & Energy</div>
+                                    <ul class="category-list">
+                                        <li>Protein Powders <span class="drug-count">15</span></li>
+                                        <li>Creatine <span class="drug-count">9</span></li>
+                                        <li>Pre-Workout <span class="drug-count">12</span></li>
+                                        <li>Energy Boosters <span class="drug-count">11</span></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Category 4 -->
+                                <div class="category-card">
+                                    <div class="category-header"><i class="fas fa-heartbeat"></i>Heart & Circulation</div>
+                                    <ul class="category-list">
+                                        <li>Omega-3 <span class="drug-count">10</span></li>
+                                        <li>Coenzyme Q10 <span class="drug-count">8</span></li>
+                                        <li>L-Arginine <span class="drug-count">6</span></li>
+                                        <li>Magnesium Supplements <span class="drug-count">7</span></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Category 5 -->
+                                <div class="category-card">
+                                    <div class="category-header"><i class="fas fa-bone"></i>Bone & Joint Support</div>
+                                    <ul class="category-list">
+                                        <li>Calcium <span class="drug-count">9</span></li>
+                                        <li>Glucosamine <span class="drug-count">6</span></li>
+                                        <li>Chondroitin <span class="drug-count">5</span></li>
+                                        <li>Vitamin D3 <span class="drug-count">8</span></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Category 6 -->
+                                <div class="category-card">
+                                    <div class="category-header"><i class="fas fa-leaf"></i>Herbal & Natural</div>
+                                    <ul class="category-list">
+                                        <li>Ginseng <span class="drug-count">7</span></li>
+                                        <li>Echinacea <span class="drug-count">5</span></li>
+                                        <li>Turmeric <span class="drug-count">8</span></li>
+                                        <li>Green Tea Extract <span class="drug-count">6</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                         </div>
+
+                
+                <h2 class="section-title">Popular Medications</h2>
+
+                <div class="search-container">
+                    <input type="text" id="drugSearch" placeholder="Search medications...">
+                    <i class="fas fa-search"></i>
+                </div>
+                
+                <div class="drug-list">
+                    <!-- Cardiovascular Drugs -->
+                    <div id="cardiovascular" class="drug-category-section">
+                    <h3 class="drug-category-title">❤️ Cardiovascular Drugs</h3>
+
+                    <!-- Blood Pressure Medications -->
+                    <div class="drug-subcategory">
+                        <h4>Blood Pressure Medications (24)</h4>
+                        <div class="drug-tags">
+                        <span class="drug-tag" data-drug="Amlodipine">Amlodipine</span>
+                        <span class="drug-tag" data-drug="Atenolol">Atenolol</span>
+                        <span class="drug-tag" data-drug="Bisoprolol">Bisoprolol</span>
+                        <span class="drug-tag" data-drug="Captopril">Captopril</span>
+                        <span class="drug-tag" data-drug="Carvedilol">Carvedilol</span>
+                        <span class="drug-tag" data-drug="Chlorthalidone">Chlorthalidone</span>
+                        <span class="drug-tag" data-drug="Clonidine">Clonidine</span>
+                        <span class="drug-tag" data-drug="Diltiazem">Diltiazem</span>
+                        <span class="drug-tag" data-drug="Enalapril">Enalapril</span>
+                        <span class="drug-tag" data-drug="Eplerenone">Eplerenone</span>
+                        <span class="drug-tag" data-drug="Furosemide">Furosemide</span>
+                        <span class="drug-tag" data-drug="Hydralazine">Hydralazine</span>
+                        <span class="drug-tag" data-drug="Hydrochlorothiazide">Hydrochlorothiazide</span>
+                        <span class="drug-tag" data-drug="Irbesartan">Irbesartan</span>
+                        <span class="drug-tag" data-drug="Lisinopril">Lisinopril</span>
+                        <span class="drug-tag" data-drug="Losartan">Losartan</span>
+                        <span class="drug-tag" data-drug="Metoprolol">Metoprolol</span>
+                        <span class="drug-tag" data-drug="Minoxidil">Minoxidil</span>
+                        <span class="drug-tag" data-drug="Nebivolol">Nebivolol</span>
+                        <span class="drug-tag" data-drug="Ramipril">Ramipril</span>
+                        <span class="drug-tag" data-drug="Spironolactone">Spironolactone</span>
+                        <span class="drug-tag" data-drug="Telmisartan">Telmisartan</span>
+                        <span class="drug-tag" data-drug="Valsartan">Valsartan</span>
+                        <span class="drug-tag" data-drug="Verapamil">Verapamil</span>
+                        </div>
+                    </div>
+
+                    <!-- Cholesterol Drugs -->
+                    <div class="drug-subcategory">
+                        <h4>Cholesterol Drugs (18)</h4>
+                        <div class="drug-tags">
+                        <span class="drug-tag" data-drug="Alirocumab">Alirocumab</span>
+                        <span class="drug-tag" data-drug="Atorvastatin">Atorvastatin</span>
+                        <span class="drug-tag" data-drug="Bempedoic acid">Bempedoic acid</span>
+                        <span class="drug-tag" data-drug="Cholestyramine">Cholestyramine</span>
+                        <span class="drug-tag" data-drug="Colestipol">Colestipol</span>
+                        <span class="drug-tag" data-drug="Evolocumab">Evolocumab</span>
+                        <span class="drug-tag" data-drug="Ezetimibe">Ezetimibe</span>
+                        <span class="drug-tag" data-drug="Fenofibrate">Fenofibrate</span>
+                        <span class="drug-tag" data-drug="Fluvastatin">Fluvastatin</span>
+                        <span class="drug-tag" data-drug="Gemfibrozil">Gemfibrozil</span>
+                        <span class="drug-tag" data-drug="Icosapent ethyl">Icosapent ethyl</span>
+                        <span class="drug-tag" data-drug="Lovastatin">Lovastatin</span>
+                        <span class="drug-tag" data-drug="Niacin">Niacin</span>
+                        <span class="drug-tag" data-drug="Omega-3 acid ethyl esters">Omega-3 acid ethyl esters</span>
+                        <span class="drug-tag" data-drug="Pitavastatin">Pitavastatin</span>
+                        <span class="drug-tag" data-drug="Pravastatin">Pravastatin</span>
+                        <span class="drug-tag" data-drug="Rosuvastatin">Rosuvastatin</span>
+                        <span class="drug-tag" data-drug="Simvastatin">Simvastatin</span>
+                        </div>
+                    </div>
+
+                    <!-- Anticoagulants -->
+                    <div class="drug-subcategory">
+                        <h4>Anticoagulants (12)</h4>
+                        <div class="drug-tags">
+                        <span class="drug-tag" data-drug="Acenocoumarol">Acenocoumarol</span>
+                        <span class="drug-tag" data-drug="Apixaban">Apixaban</span>
+                        <span class="drug-tag" data-drug="Argatroban">Argatroban</span>
+                        <span class="drug-tag" data-drug="Bivalirudin">Bivalirudin</span>
+                        <span class="drug-tag" data-drug="Dabigatran">Dabigatran</span>
+                        <span class="drug-tag" data-drug="Danaparoid">Danaparoid</span>
+                        <span class="drug-tag" data-drug="Edoxaban">Edoxaban</span>
+                        <span class="drug-tag" data-drug="Enoxaparin">Enoxaparin</span>
+                        <span class="drug-tag" data-drug="Fondaparinux">Fondaparinux</span>
+                        <span class="drug-tag" data-drug="Heparin">Heparin</span>
+                        <span class="drug-tag" data-drug="Rivaroxaban">Rivaroxaban</span>
+                        <span class="drug-tag" data-drug="Warfarin">Warfarin</span>
+                        </div>
+                    </div>
+
+                    <!-- Heart Failure Medications -->
+                    <div class="drug-subcategory">
+                        <h4>Heart Failure Medications (9)</h4>
+                        <div class="drug-tags">
+                        <span class="drug-tag" data-drug="Bisoprolol">Bisoprolol</span>
+                        <span class="drug-tag" data-drug="Carvedilol">Carvedilol</span>
+                        <span class="drug-tag" data-drug="Digoxin">Digoxin</span>
+                        <span class="drug-tag" data-drug="Eplerenone">Eplerenone</span>
+                        <span class="drug-tag" data-drug="Furosemide">Furosemide</span>
+                        <span class="drug-tag" data-drug="Ivabradine">Ivabradine</span>
+                        <span class="drug-tag" data-drug="Metolazone">Metolazone</span>
+                        <span class="drug-tag" data-drug="Sacubitril/Valsartan">Sacubitril/Valsartan</span>
+                        <span class="drug-tag" data-drug="Spironolactone">Spironolactone</span>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Neurology & Psychiatry -->
+                    <div id="neurology" class="drug-category-section">
+                    <h3 class="drug-category-title">🧠 Neurology & Psychiatry</h3>
+
+                    <!-- Antidepressants -->
+                    <div class="drug-subcategory">
+                        <h4>Antidepressants (32)</h4>
+                        <div class="drug-tags">
+                        <span class="drug-tag" data-drug="Agomelatine">Agomelatine</span>
+                        <span class="drug-tag" data-drug="Amitriptyline">Amitriptyline</span>
+                        <span class="drug-tag" data-drug="Bupropion">Bupropion</span>
+                        <span class="drug-tag" data-drug="Citalopram">Citalopram</span>
+                        <span class="drug-tag" data-drug="Clomipramine">Clomipramine</span>
+                        <span class="drug-tag" data-drug="Desvenlafaxine">Desvenlafaxine</span>
+                        <span class="drug-tag" data-drug="Dothiepin">Dothiepin</span>
+                        <span class="drug-tag" data-drug="Doxepin">Doxepin</span>
+                        <span class="drug-tag" data-drug="Duloxetine">Duloxetine</span>
+                        <span class="drug-tag" data-drug="Escitalopram">Escitalopram</span>
+                        <span class="drug-tag" data-drug="Fluoxetine">Fluoxetine</span>
+                        <span class="drug-tag" data-drug="Imipramine">Imipramine</span>
+                        <span class="drug-tag" data-drug="Isocarboxazid">Isocarboxazid</span>
+                        <span class="drug-tag" data-drug="Levomilnacipran">Levomilnacipran</span>
+                        <span class="drug-tag" data-drug="Maprotiline">Maprotiline</span>
+                        <span class="drug-tag" data-drug="Milnacipran">Milnacipran</span>
+                        <span class="drug-tag" data-drug="Mirtazapine">Mirtazapine</span>
+                        <span class="drug-tag" data-drug="Moclobemide">Moclobemide</span>
+                        <span class="drug-tag" data-drug="Nefazodone">Nefazodone</span>
+                        <span class="drug-tag" data-drug="Nortriptyline">Nortriptyline</span>
+                        <span class="drug-tag" data-drug="Paroxetine">Paroxetine</span>
+                        <span class="drug-tag" data-drug="Phenelzine">Phenelzine</span>
+                        <span class="drug-tag" data-drug="Protriptyline">Protriptyline</span>
+                        <span class="drug-tag" data-drug="Reboxetine">Reboxetine</span>
+                        <span class="drug-tag" data-drug="Selegiline">Selegiline</span>
+                        <span class="drug-tag" data-drug="Sertraline">Sertraline</span>
+                        <span class="drug-tag" data-drug="Trazodone">Trazodone</span>
+                        <span class="drug-tag" data-drug="Tranylcypromine">Tranylcypromine</span>
+                        <span class="drug-tag" data-drug="Trimipramine">Trimipramine</span>
+                        <span class="drug-tag" data-drug="Venlafaxine">Venlafaxine</span>
+                        <span class="drug-tag" data-drug="Vilazodone">Vilazodone</span>
+                        <span class="drug-tag" data-drug="Vortioxetine">Vortioxetine</span>
+                        </div>
+                    </div>
+
+                    <!-- Anti-anxiety Medications -->
+                    <div class="drug-subcategory">
+                        <h4>Anti-anxiety Medications (21)</h4>
+                        <div class="drug-tags">
+                        <span class="drug-tag" data-drug="Alprazolam">Alprazolam</span>
+                        <span class="drug-tag" data-drug="Bromazepam">Bromazepam</span>
+                        <span class="drug-tag" data-drug="Buspirone">Buspirone</span>
+                        <span class="drug-tag" data-drug="Chlordiazepoxide">Chlordiazepoxide</span>
+                        <span class="drug-tag" data-drug="Clonazepam">Clonazepam</span>
+                        <span class="drug-tag" data-drug="Clorazepate">Clorazepate</span>
+                        <span class="drug-tag" data-drug="Diazepam">Diazepam</span>
+                        <span class="drug-tag" data-drug="Etifoxine">Etifoxine</span>
+                        <span class="drug-tag" data-drug="Flurazepam">Flurazepam</span>
+                        <span class="drug-tag" data-drug="Gabapentin">Gabapentin</span>
+                        <span class="drug-tag" data-drug="Hydroxyzine">Hydroxyzine</span>
+                        <span class="drug-tag" data-drug="Lofepramine">Lofepramine</span>
+                        <span class="drug-tag" data-drug="Lorazepam">Lorazepam</span>
+                        <span class="drug-tag" data-drug="Meprobamate">Meprobamate</span>
+                        <span class="drug-tag" data-drug="Midazolam">Midazolam</span>
+                        <span class="drug-tag" data-drug="Nitrazepam">Nitrazepam</span>
+                        <span class="drug-tag" data-drug="Oxazepam">Oxazepam</span>
+                        <span class="drug-tag" data-drug="Phenibut">Phenibut</span>
+                        <span class="drug-tag" data-drug="Pregabalin">Pregabalin</span>
+                        <span class="drug-tag" data-drug="Propranolol">Propranolol</span>
+                        <span class="drug-tag" data-drug="Temazepam">Temazepam</span>
+                        </div>
+                    </div>
+
+                    <!-- Antipsychotics -->
+                    <div class="drug-subcategory">
+                        <h4>Antipsychotics (15)</h4>
+                        <div class="drug-tags">
+                        <span class="drug-tag" data-drug="Amisulpride">Amisulpride</span>
+                        <span class="drug-tag" data-drug="Aripiprazole">Aripiprazole</span>
+                        <span class="drug-tag" data-drug="Cariprazine">Cariprazine</span>
+                        <span class="drug-tag" data-drug="Chlorpromazine">Chlorpromazine</span>
+                        <span class="drug-tag" data-drug="Clozapine">Clozapine</span>
+                        <span class="drug-tag" data-drug="Fluphenazine">Fluphenazine</span>
+                        <span class="drug-tag" data-drug="Haloperidol">Haloperidol</span>
+                        <span class="drug-tag" data-drug="Lurasidone">Lurasidone</span>
+                        <span class="drug-tag" data-drug="Olanzapine">Olanzapine</span>
+                        <span class="drug-tag" data-drug="Paliperidone">Paliperidone</span>
+                        <span class="drug-tag" data-drug="Perphenazine">Perphenazine</span>
+                        <span class="drug-tag" data-drug="Quetiapine">Quetiapine</span>
+                        <span class="drug-tag" data-drug="Risperidone">Risperidone</span>
+                        <span class="drug-tag" data-drug="Thioridazine">Thioridazine</span>
+                        <span class="drug-tag" data-drug="Ziprasidone">Ziprasidone</span>
+                        </div>
+                    </div>
+
+                    <!-- Sleep Aids -->
+                    <div class="drug-subcategory">
+                        <h4>Sleep Aids (11)</h4>
+                        <div class="drug-tags">
+                        <span class="drug-tag" data-drug="Diphenhydramine">Diphenhydramine</span>
+                        <span class="drug-tag" data-drug="Doxepin (low-dose)">Doxepin (low-dose)</span>
+                        <span class="drug-tag" data-drug="Eszopiclone">Eszopiclone</span>
+                        <span class="drug-tag" data-drug="Hydroxyzine">Hydroxyzine</span>
+                        <span class="drug-tag" data-drug="Melatonin">Melatonin</span>
+                        <span class="drug-tag" data-drug="Ramelteon">Ramelteon</span>
+                        <span class="drug-tag" data-drug="Suvorexant">Suvorexant</span>
+                        <span class="drug-tag" data-drug="Temazepam">Temazepam</span>
+                        <span class="drug-tag" data-drug="Trazodone">Trazodone</span>
+                        <span class="drug-tag" data-drug="Zaleplon">Zaleplon</span>
+                        <span class="drug-tag" data-drug="Zolpidem">Zolpidem</span>
+                        </div>
+                    </div>
+                    </div>
+
+
+                    <!-- Respiratory Drugs -->
+                    <div id="respiratory" class="drug-category-section">
+                        <h3 class="drug-category-title">🫁 Respiratory Drugs</h3>
+                        
+                        <div class="drug-subcategory">
+                            <h4>Asthma Medications (16)</h4>
+                            <div class="drug-tags">
+                                <span class="drug-tag" data-drug="Albuterol">Albuterol</span>
+                                <span class="drug-tag" data-drug="Beclomethasone">Beclomethasone</span>
+                                <span class="drug-tag" data-drug="Budesonide">Budesonide</span>
+                                <span class="drug-tag" data-drug="Cromolyn sodium">Cromolyn sodium</span>
+                                <span class="drug-tag" data-drug="Fluticasone">Fluticasone</span>
+                                <span class="drug-tag" data-drug="Formoterol">Formoterol</span>
+                                <span class="drug-tag" data-drug="Ipratropium">Ipratropium</span>
+                                <span class="drug-tag" data-drug="Levalbuterol">Levalbuterol</span>
+                                <span class="drug-tag" data-drug="Mepolizumab">Mepolizumab</span>
+                                <span class="drug-tag" data-drug="Montelukast">Montelukast</span>
+                                <span class="drug-tag" data-drug="Omalizumab">Omalizumab</span>
+                                <span class="drug-tag" data-drug="Salbutamol">Salbutamol</span>
+                                <span class="drug-tag" data-drug="Salmeterol">Salmeterol</span>
+                                <span class="drug-tag" data-drug="Theophylline">Theophylline</span>
+                                <span class="drug-tag" data-drug="Tiotropium">Tiotropium</span>
+                                <span class="drug-tag" data-drug="Zafirlukast">Zafirlukast</span>
+                            </div>
+                        </div>
+
+
+                        <div class="drug-subcategory">
+                            <h4>Allergy Drugs (14)</h4>
+                            <div class="drug-tags">
+                                <span class="drug-tag" data-drug="Azelastine">Azelastine</span>
+                                <span class="drug-tag" data-drug="Cetirizine">Cetirizine</span>
+                                <span class="drug-tag" data-drug="Chlorpheniramine">Chlorpheniramine</span>
+                                <span class="drug-tag" data-drug="Clemastine">Clemastine</span>
+                                <span class="drug-tag" data-drug="Desloratadine">Desloratadine</span>
+                                <span class="drug-tag" data-drug="Dimenhydrinate">Dimenhydrinate</span>
+                                <span class="drug-tag" data-drug="Diphenhydramine">Diphenhydramine</span>
+                                <span class="drug-tag" data-drug="Fexofenadine">Fexofenadine</span>
+                                <span class="drug-tag" data-drug="Hydroxyzine">Hydroxyzine</span>
+                                <span class="drug-tag" data-drug="Ketotifen">Ketotifen</span>
+                                <span class="drug-tag" data-drug="Levocetirizine">Levocetirizine</span>
+                                <span class="drug-tag" data-drug="Loratadine">Loratadine</span>
+                                <span class="drug-tag" data-drug="Montelukast">Montelukast</span>
+                                <span class="drug-tag" data-drug="Olopatadine">Olopatadine</span>
+                            </div>
+                        </div>
+
+
+                        <div class="drug-subcategory">
+                            <h4>Cold & Flu Medications (22)</h4>
+                            <div class="drug-tags">
+                                <span class="drug-tag" data-drug="Acetaminophen">Acetaminophen</span>
+                                <span class="drug-tag" data-drug="Ambroxol">Ambroxol</span>
+                                <span class="drug-tag" data-drug="Bromhexine">Bromhexine</span>
+                                <span class="drug-tag" data-drug="Camphor">Camphor</span>
+                                <span class="drug-tag" data-drug="Cetirizine">Cetirizine</span>
+                                <span class="drug-tag" data-drug="Chlorpheniramine">Chlorpheniramine</span>
+                                <span class="drug-tag" data-drug="Codeine">Codeine</span>
+                                <span class="drug-tag" data-drug="Dextromethorphan">Dextromethorphan</span>
+                                <span class="drug-tag" data-drug="Diphenhydramine">Diphenhydramine</span>
+                                <span class="drug-tag" data-drug="Guaifenesin">Guaifenesin</span>
+                                <span class="drug-tag" data-drug="Ibuprofen">Ibuprofen</span>
+                                <span class="drug-tag" data-drug="Loratadine">Loratadine</span>
+                                <span class="drug-tag" data-drug="Menthol">Menthol</span>
+                                <span class="drug-tag" data-drug="Naproxen">Naproxen</span>
+                                <span class="drug-tag" data-drug="Oseltamivir">Oseltamivir</span>
+                                <span class="drug-tag" data-drug="Oxymetazoline">Oxymetazoline</span>
+                                <span class="drug-tag" data-drug="Paracetamol">Paracetamol</span>
+                                <span class="drug-tag" data-drug="Phenylephrine">Phenylephrine</span>
+                                <span class="drug-tag" data-drug="Phenylpropanolamine">Phenylpropanolamine</span>
+                                <span class="drug-tag" data-drug="Pseudoephedrine">Pseudoephedrine</span>
+                                <span class="drug-tag" data-drug="Xylometazoline">Xylometazoline</span>
+                                <span class="drug-tag" data-drug="Zanamivir">Zanamivir</span>
+                            </div>
+                        </div>
+
+
+                       <div class="drug-subcategory">
+                            <h4>Antibiotics (28)</h4>
+                            <div class="drug-tags">
+                                <span class="drug-tag" data-drug="Amoxicillin">Amoxicillin</span>
+                                <span class="drug-tag" data-drug="Ampicillin">Ampicillin</span>
+                                <span class="drug-tag" data-drug="Azithromycin">Azithromycin</span>
+                                <span class="drug-tag" data-drug="Aztreonam">Aztreonam</span>
+                                <span class="drug-tag" data-drug="Cefotaxime">Cefotaxime</span>
+                                <span class="drug-tag" data-drug="Ceftriaxone">Ceftriaxone</span>
+                                <span class="drug-tag" data-drug="Cefuroxime">Cefuroxime</span>
+                                <span class="drug-tag" data-drug="Cephalexin">Cephalexin</span>
+                                <span class="drug-tag" data-drug="Ciprofloxacin">Ciprofloxacin</span>
+                                <span class="drug-tag" data-drug="Clarithromycin">Clarithromycin</span>
+                                <span class="drug-tag" data-drug="Clindamycin">Clindamycin</span>
+                                <span class="drug-tag" data-drug="Doxycycline">Doxycycline</span>
+                                <span class="drug-tag" data-drug="Erythromycin">Erythromycin</span>
+                                <span class="drug-tag" data-drug="Fosfomycin">Fosfomycin</span>
+                                <span class="drug-tag" data-drug="Gentamicin">Gentamicin</span>
+                                <span class="drug-tag" data-drug="Imipenem">Imipenem</span>
+                                <span class="drug-tag" data-drug="Isoniazid">Isoniazid</span>
+                                <span class="drug-tag" data-drug="Levofloxacin">Levofloxacin</span>
+                                <span class="drug-tag" data-drug="Linezolid">Linezolid</span>
+                                <span class="drug-tag" data-drug="Meropenem">Meropenem</span>
+                                <span class="drug-tag" data-drug="Metronidazole">Metronidazole</span>
+                                <span class="drug-tag" data-drug="Nitrofurantoin">Nitrofurantoin</span>
+                                <span class="drug-tag" data-drug="Penicillin G">Penicillin G</span>
+                                <span class="drug-tag" data-drug="Rifampin">Rifampin</span>
+                                <span class="drug-tag" data-drug="Sulfamethoxazole/Trimethoprim">Sulfamethoxazole/Trimethoprim</span>
+                                <span class="drug-tag" data-drug="Tetracycline">Tetracycline</span>
+                                <span class="drug-tag" data-drug="Tobramycin">Tobramycin</span>
+                                <span class="drug-tag" data-drug="Vancomycin">Vancomycin</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bone & Joint Medications -->
+                    <div id="bone" class="drug-category-section">
+                        <h3 class="drug-category-title">🦴 Bone & Joint Medications</h3>
+                        
+                        <div class="drug-subcategory">
+                            <h4>Osteoporosis Drugs (8)</h4>
+                            <div class="drug-tags">
+                                <span class="drug-tag" data-drug="Alendronate">Alendronate</span>
+                                <span class="drug-tag" data-drug="Calcitonin">Calcitonin</span>
+                                <span class="drug-tag" data-drug="Denosumab">Denosumab</span>
+                                <span class="drug-tag" data-drug="Ibandronate">Ibandronate</span>
+                                <span class="drug-tag" data-drug="Raloxifene">Raloxifene</span>
+                                <span class="drug-tag" data-drug="Risedronate">Risedronate</span>
+                                <span class="drug-tag" data-drug="Teriparatide">Teriparatide</span>
+                                <span class="drug-tag" data-drug="Zoledronic acid">Zoledronic acid</span>
+                            </div>
+                        </div>
+
+                        <div class="drug-subcategory">
+                            <h4>Arthritis Medications (13)</h4>
+                            <div class="drug-tags">
+                                <span class="drug-tag" data-drug="Adalimumab">Adalimumab</span>
+                                <span class="drug-tag" data-drug="Baricitinib">Baricitinib</span>
+                                <span class="drug-tag" data-drug="Certolizumab">Certolizumab</span>
+                                <span class="drug-tag" data-drug="Etanercept">Etanercept</span>
+                                <span class="drug-tag" data-drug="Golimumab">Golimumab</span>
+                                <span class="drug-tag" data-drug="Hydroxychloroquine">Hydroxychloroquine</span>
+                                <span class="drug-tag" data-drug="Ibuprofen">Ibuprofen</span>
+                                <span class="drug-tag" data-drug="Infliximab">Infliximab</span>
+                                <span class="drug-tag" data-drug="Leflunomide">Leflunomide</span>
+                                <span class="drug-tag" data-drug="Methotrexate">Methotrexate</span>
+                                <span class="drug-tag" data-drug="Naproxen">Naproxen</span>
+                                <span class="drug-tag" data-drug="Sulfasalazine">Sulfasalazine</span>
+                                <span class="drug-tag" data-drug="Tofacitinib">Tofacitinib</span>
+                            </div>
+                        </div>
+
+                        <div class="drug-subcategory">
+                            <h4>Pain Relievers (19)</h4>
+                            <div class="drug-tags">
+                                <span class="drug-tag" data-drug="Aspirin">Aspirin</span>
+                                <span class="drug-tag" data-drug="Buprenorphine">Buprenorphine</span>
+                                <span class="drug-tag" data-drug="Celecoxib">Celecoxib</span>
+                                <span class="drug-tag" data-drug="Codeine">Codeine</span>
+                                <span class="drug-tag" data-drug="Diclofenac">Diclofenac</span>
+                                <span class="drug-tag" data-drug="Etoricoxib">Etoricoxib</span>
+                                <span class="drug-tag" data-drug="Fentanyl">Fentanyl</span>
+                                <span class="drug-tag" data-drug="Hydrocodone">Hydrocodone</span>
+                                <span class="drug-tag" data-drug="Ibuprofen">Ibuprofen</span>
+                                <span class="drug-tag" data-drug="Indomethacin">Indomethacin</span>
+                                <span class="drug-tag" data-drug="Ketorolac">Ketorolac</span>
+                                <span class="drug-tag" data-drug="Meloxicam">Meloxicam</span>
+                                <span class="drug-tag" data-drug="Morphine">Morphine</span>
+                                <span class="drug-tag" data-drug="Naproxen">Naproxen</span>
+                                <span class="drug-tag" data-drug="Nimesulide">Nimesulide</span>
+                                <span class="drug-tag" data-drug="Oxycodone">Oxycodone</span>
+                                <span class="drug-tag" data-drug="Paracetamol">Paracetamol</span>
+                                <span class="drug-tag" data-drug="Pethidine">Pethidine</span>
+                                <span class="drug-tag" data-drug="Tramadol">Tramadol</span>
+                            </div>
+                        </div>
+
+                        <div class="drug-subcategory">
+                            <h4>Anti-inflammatory Drugs (17)</h4>
+                            <div class="drug-tags">
+                                <span class="drug-tag" data-drug="Azathioprine">Azathioprine</span>
+                                <span class="drug-tag" data-drug="Celecoxib">Celecoxib</span>
+                                <span class="drug-tag" data-drug="Colchicine">Colchicine</span>
+                                <span class="drug-tag" data-drug="Cortisone">Cortisone</span>
+                                <span class="drug-tag" data-drug="Dexamethasone">Dexamethasone</span>
+                                <span class="drug-tag" data-drug="Diclofenac">Diclofenac</span>
+                                <span class="drug-tag" data-drug="Etoricoxib">Etoricoxib</span>
+                                <span class="drug-tag" data-drug="Hydrocortisone">Hydrocortisone</span>
+                                <span class="drug-tag" data-drug="Ibuprofen">Ibuprofen</span>
+                                <span class="drug-tag" data-drug="Indomethacin">Indomethacin</span>
+                                <span class="drug-tag" data-drug="Meloxicam">Meloxicam</span>
+                                <span class="drug-tag" data-drug="Mesalamine">Mesalamine</span>
+                                <span class="drug-tag" data-drug="Methotrexate">Methotrexate</span>
+                                <span class="drug-tag" data-drug="Methylprednisolone">Methylprednisolone</span>
+                                <span class="drug-tag" data-drug="Naproxen">Naproxen</span>
+                                <span class="drug-tag" data-drug="Prednisone">Prednisone</span>
+                                <span class="drug-tag" data-drug="Sulfasalazine">Sulfasalazine</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Hormonal Drugs -->
+                    <div id="hormonal" class="drug-category-section">
+                        <h3 class="drug-category-title">🧬 Hormonal Drugs</h3>
+                        
+                        <div class="drug-subcategory">
+                            <h4>Anti-inflammatory Drugs (17)</h4>
+                            <div class="drug-tags">
+                                <span class="drug-tag" data-drug="Azathioprine">Azathioprine</span>
+                                <span class="drug-tag" data-drug="Celecoxib">Celecoxib</span>
+                                <span class="drug-tag" data-drug="Colchicine">Colchicine</span>
+                                <span class="drug-tag" data-drug="Cortisone">Cortisone</span>
+                                <span class="drug-tag" data-drug="Dexamethasone">Dexamethasone</span>
+                                <span class="drug-tag" data-drug="Diclofenac">Diclofenac</span>
+                                <span class="drug-tag" data-drug="Etoricoxib">Etoricoxib</span>
+                                <span class="drug-tag" data-drug="Hydrocortisone">Hydrocortisone</span>
+                                <span class="drug-tag" data-drug="Ibuprofen">Ibuprofen</span>
+                                <span class="drug-tag" data-drug="Indomethacin">Indomethacin</span>
+                                <span class="drug-tag" data-drug="Meloxicam">Meloxicam</span>
+                                <span class="drug-tag" data-drug="Mesalamine">Mesalamine</span>
+                                <span class="drug-tag" data-drug="Methotrexate">Methotrexate</span>
+                                <span class="drug-tag" data-drug="Methylprednisolone">Methylprednisolone</span>
+                                <span class="drug-tag" data-drug="Naproxen">Naproxen</span>
+                                <span class="drug-tag" data-drug="Prednisone">Prednisone</span>
+                                <span class="drug-tag" data-drug="Sulfasalazine">Sulfasalazine</span>
+                            </div>
+                        </div>
+
+                        <div class="drug-subcategory">
+                            <h4>Arthritis Medications (13)</h4>
+                            <div class="drug-tags">
+                                <span class="drug-tag" data-drug="Adalimumab">Adalimumab</span>
+                                <span class="drug-tag" data-drug="Baricitinib">Baricitinib</span>
+                                <span class="drug-tag" data-drug="Certolizumab">Certolizumab</span>
+                                <span class="drug-tag" data-drug="Etanercept">Etanercept</span>
+                                <span class="drug-tag" data-drug="Golimumab">Golimumab</span>
+                                <span class="drug-tag" data-drug="Hydroxychloroquine">Hydroxychloroquine</span>
+                                <span class="drug-tag" data-drug="Ibuprofen">Ibuprofen</span>
+                                <span class="drug-tag" data-drug="Infliximab">Infliximab</span>
+                                <span class="drug-tag" data-drug="Leflunomide">Leflunomide</span>
+                                <span class="drug-tag" data-drug="Methotrexate">Methotrexate</span>
+                                <span class="drug-tag" data-drug="Naproxen">Naproxen</span>
+                                <span class="drug-tag" data-drug="Sulfasalazine">Sulfasalazine</span>
+                                <span class="drug-tag" data-drug="Tofacitinib">Tofacitinib</span>
+                            </div>
+                        </div>
+
+                        <div class="drug-subcategory">
+                            <h4>Osteoporosis Drugs (8)</h4>
+                            <div class="drug-tags">
+                                <span class="drug-tag" data-drug="Alendronate">Alendronate</span>
+                                <span class="drug-tag" data-drug="Calcitonin">Calcitonin</span>
+                                <span class="drug-tag" data-drug="Denosumab">Denosumab</span>
+                                <span class="drug-tag" data-drug="Ibandronate">Ibandronate</span>
+                                <span class="drug-tag" data-drug="Raloxifene">Raloxifene</span>
+                                <span class="drug-tag" data-drug="Risedronate">Risedronate</span>
+                                <span class="drug-tag" data-drug="Teriparatide">Teriparatide</span>
+                                <span class="drug-tag" data-drug="Zoledronic acid">Zoledronic acid</span>
+                            </div>
+                        </div>
+
+                        <div class="drug-subcategory">
+                            <h4>Pain Relievers (19)</h4>
+                            <div class="drug-tags">
+                                <span class="drug-tag" data-drug="Aspirin">Aspirin</span>
+                                <span class="drug-tag" data-drug="Buprenorphine">Buprenorphine</span>
+                                <span class="drug-tag" data-drug="Celecoxib">Celecoxib</span>
+                                <span class="drug-tag" data-drug="Codeine">Codeine</span>
+                                <span class="drug-tag" data-drug="Diclofenac">Diclofenac</span>
+                                <span class="drug-tag" data-drug="Etoricoxib">Etoricoxib</span>
+                                <span class="drug-tag" data-drug="Fentanyl">Fentanyl</span>
+                                <span class="drug-tag" data-drug="Hydrocodone">Hydrocodone</span>
+                                <span class="drug-tag" data-drug="Ibuprofen">Ibuprofen</span>
+                                <span class="drug-tag" data-drug="Indomethacin">Indomethacin</span>
+                                <span class="drug-tag" data-drug="Ketorolac">Ketorolac</span>
+                                <span class="drug-tag" data-drug="Meloxicam">Meloxicam</span>
+                                <span class="drug-tag" data-drug="Morphine">Morphine</span>
+                                <span class="drug-tag" data-drug="Naproxen">Naproxen</span>
+                                <span class="drug-tag" data-drug="Nimesulide">Nimesulide</span>
+                                <span class="drug-tag" data-drug="Oxycodone">Oxycodone</span>
+                                <span class="drug-tag" data-drug="Paracetamol">Paracetamol</span>
+                                <span class="drug-tag" data-drug="Pethidine">Pethidine</span>
+                                <span class="drug-tag" data-drug="Tramadol">Tramadol</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gastrointestinal Drugs -->
+                    <div id="gastrointestinal" class="drug-category-section">
+                        <h3 class="drug-category-title">Gastrointestinal Drugs</h3>
+                        
+                        <div class="drug-subcategory">
+                            <h4>Acid Reducers (14)</h4>
+                            <div class="drug-tags">
+                                <span class="drug-tag" data-drug="Aluminum hydroxide">Aluminum hydroxide</span>
+                                <span class="drug-tag" data-drug="Cimetidine">Cimetidine</span>
+                                <span class="drug-tag" data-drug="Dexlansoprazole">Dexlansoprazole</span>
+                                <span class="drug-tag" data-drug="Esomeprazole">Esomeprazole</span>
+                                <span class="drug-tag" data-drug="Famotidine">Famotidine</span>
+                                <span class="drug-tag" data-drug="Lansoprazole">Lansoprazole</span>
+                                <span class="drug-tag" data-drug="Magnesium hydroxide">Magnesium hydroxide</span>
+                                <span class="drug-tag" data-drug="Misoprostol">Misoprostol</span>
+                                <span class="drug-tag" data-drug="Omeprazole">Omeprazole</span>
+                                <span class="drug-tag" data-drug="Pantoprazole">Pantoprazole</span>
+                                <span class="drug-tag" data-drug="Rabeprazole">Rabeprazole</span>
+                                <span class="drug-tag" data-drug="Ranitidine">Ranitidine</span>
+                                <span class="drug-tag" data-drug="Sodium bicarbonate">Sodium bicarbonate</span>
+                                <span class="drug-tag" data-drug="Sucralfate">Sucralfate</span>
+                            </div>
+                        </div>
+
+                        <div class="drug-subcategory">
+                            <h4>Anti-nausea Drugs (11)</h4>
+                            <div class="drug-tags">
+                                <span class="drug-tag" data-drug="Dimenhydrinate">Dimenhydrinate</span>
+                                <span class="drug-tag" data-drug="Domperidone">Domperidone</span>
+                                <span class="drug-tag" data-drug="Doxylamine">Doxylamine</span>
+                                <span class="drug-tag" data-drug="Granisetron">Granisetron</span>
+                                <span class="drug-tag" data-drug="Meclizine">Meclizine</span>
+                                <span class="drug-tag" data-drug="Metoclopramide">Metoclopramide</span>
+                                <span class="drug-tag" data-drug="Ondansetron">Ondansetron</span>
+                                <span class="drug-tag" data-drug="Prochlorperazine">Prochlorperazine</span>
+                                <span class="drug-tag" data-drug="Promethazine">Promethazine</span>
+                                <span class="drug-tag" data-drug="Scopolamine">Scopolamine</span>
+                                <span class="drug-tag" data-drug="Trimethobenzamide">Trimethobenzamide</span>
+                            </div>
+                        </div>
+
+                        <div class="drug-subcategory">
+                            <h4>IBD Medications (8)</h4>
+                            <div class="drug-tags">
+                                <span class="drug-tag" data-drug="Adalimumab">Adalimumab</span>
+                                <span class="drug-tag" data-drug="Azathioprine">Azathioprine</span>
+                                <span class="drug-tag" data-drug="Budesonide">Budesonide</span>
+                                <span class="drug-tag" data-drug="Infliximab">Infliximab</span>
+                                <span class="drug-tag" data-drug="Mesalamine">Mesalamine</span>
+                                <span class="drug-tag" data-drug="Methotrexate">Methotrexate</span>
+                                <span class="drug-tag" data-drug="Sulfasalazine">Sulfasalazine</span>
+                                <span class="drug-tag" data-drug="Vedolizumab">Vedolizumab</span>
+                            </div>
+                        </div>
+
+                        <div class="drug-subcategory">
+                            <h4>Laxatives (9)</h4>
+                            <div class="drug-tags">
+                                <span class="drug-tag" data-drug="Bisacodyl">Bisacodyl</span>
+                                <span class="drug-tag" data-drug="Docusate sodium">Docusate sodium</span>
+                                <span class="drug-tag" data-drug="Glycerin suppository">Glycerin suppository</span>
+                                <span class="drug-tag" data-drug="Lactulose">Lactulose</span>
+                                <span class="drug-tag" data-drug="Magnesium citrate">Magnesium citrate</span>
+                                <span class="drug-tag" data-drug="Polyethylene glycol">Polyethylene glycol</span>
+                                <span class="drug-tag" data-drug="Psyllium">Psyllium</span>
+                                <span class="drug-tag" data-drug="Senna">Senna</span>
+                                <span class="drug-tag" data-drug="Sorbitol">Sorbitol</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column (Sidebar) -->
+            <div class="sidebar">
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Today's Top Stories</h3>
+                    <ul class="sidebar-list">
+                        <li><a href="https://www.webmd.com/a-to-z-guides/ss/slideshow-health-benefits-of-napping"><i class="fas fa-bed"></i> Why Napping Could Be Good for You</a></li>
+                        <li><a href="https://www.nhs.uk/live-well/bone-health/food-for-strong-bones/"><i class="fas fa-apple-alt"></i> Foods That Could Help Prevent Bone Loss</a></li>
+                        <li><a href="https://www.nationalmssociety.org/managing-ms/living-with-ms/emotional-well-being/mood-changes"><i class="fas fa-smile"></i> Tips to Lift Your Mood With Multiple Sclerosis</a></li>
+                        <li><a href="https://www.webmd.com/default.htm"><i class="fas fa-user-md"></i> Wendell Pierce Prioritizes Prevention And Self-Care</a></li>
+                        <li><a href="https://info.health.nz/keeping-healthy/healthy-homes-environments/healthy-habits"><i class="fas fa-hand-sparkles"></i> Healthy habits to stop the spread of illnesses</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Medication Safety Tips</h3>
+                    <div class="health-tip">
+                        <h4>Proper Medication Use</h4>
+                        <p>Always take medications as prescribed by your doctor and avoid self-discontinuation.</p>
+                    </div>
+                    <div class="health-tip">
+                        <h4>Drug Interactions</h4>
+                        <p>Inform your doctor about all medications you're taking before starting any new drug.</p>
+                    </div>
+                    <div class="health-tip">
+                        <h4>Medication Storage</h4>
+                        <p>Store medications in a dry, cool place away from children's reach.</p>
+                    </div>
+                    <div class="health-tip">
+                        <h4>Read Medication Labels</h4>
+                        <p>Always read the instructions and warnings on medication labels before taking any drug.</p>
+                    </div>
+
+                    <div class="health-tip">
+                        <h4>Check Expiration Dates</h4>
+                        <p>Regularly check your medicine cabinet and dispose of expired medications properly.</p>
+                    </div>
+
+                    <div class="health-tip">
+                        <h4>Use Pill Organizers</h4>
+                        <p>Consider using a weekly pill organizer to avoid missing doses or taking double doses.</p>
+                    </div>
+
+                    <div class="health-tip">
+                        <h4>Report Side Effects</h4>
+                        <p>Immediately report any unusual side effects to your healthcare provider.</p>
+                    </div>
+
+                    <div class="health-tip">
+                        <h4>Don't Share Medications</h4>
+                        <p>Never share prescription medications with others, even if they have similar symptoms.</p>
+                    </div>
+
+                    <div class="health-tip">
+                        <h4>Take with Water</h4>
+                        <p>Always take pills with a full glass of water unless otherwise directed.</p>
+                    </div>
+
+                    <div class="health-tip">
+                        <h4>Follow Food Instructions</h4>
+                        <p>Pay attention to whether medications should be taken with food or on an empty stomach.</p>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Nutrition & Diet Tips</h3>
+                    <div class="health-tip">
+                        <h4>Eat More Fiber</h4>
+                        <p>Include high-fiber foods like whole grains, fruits, and vegetables to support digestion.</p>
+                    </div>
+
+                    <div class="health-tip">
+                        <h4>Choose Healthy Fats</h4>
+                        <p>Opt for unsaturated fats from nuts, avocados, and olive oil instead of saturated fats.</p>
+                    </div>
+
+                    <div class="health-tip">
+                        <h4>Portion Control</h4>
+                        <p>Use smaller plates and pay attention to serving sizes to avoid overeating.</p>
+                    </div>
+
+                    <div class="health-tip">
+                        <h4>Stay Hydrated with Water</h4>
+                        <p>Choose water over sugary drinks to stay hydrated without extra calories.</p>
+                    </div>
+
+                    <div class="health-tip">
+                        <h4>Eat the Rainbow</h4>
+                        <p>Include fruits and vegetables of different colors for a variety of nutrients.</p>
+                    </div>
+
+                    <div class="health-tip">
+                        <h4>Limit Processed Foods</h4>
+                        <p>Reduce consumption of processed and packaged foods high in sodium and preservatives.</p>
+                    </div>
+
+                    <div class="health-tip">
+                        <h4>Don't Skip Breakfast</h4>
+                        <p>Start your day with a nutritious breakfast to boost energy and metabolism.</p>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Quick Daily Health Tips</h3>
+                    <div class="health-tip">
+                        <h4>Stand Up Every Hour</h4>
+                        <p>If you sit for long periods, stand up and move around for a few minutes every hour.</p>
+                    </div>
+
+                    <div class="health-tip">
+                        <h4>Drink Water First Thing</h4>
+                        <p>Start your day with a glass of water to rehydrate after sleep.</p>
+                    </div>
+
+                    <div class="health-tip">
+                        <h4>Practice Good Posture</h4>
+                        <p>Be mindful of your posture when sitting, standing, and using electronic devices.</p>
+                    </div>
+
+                    <div class="health-tip">
+                        <h4>Take Vitamin D</h4>
+                        <p>Consider vitamin D supplements if you have limited sun exposure, especially in winter.</p>
+                    </div>
+
+                    <div class="health-tip">
+                        <h4>Laugh More</h4>
+                        <p>Find reasons to laugh daily - it reduces stress and boosts immune function.</p>
+                    </div>
+
+                    <div class="health-tip">
+                        <h4>Practice Gratitude</h4>
+                        <p>Take a moment each day to reflect on things you're grateful for.</p>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Sleep & Mental Health Tips</h3>
+                    <div class="health-tip">
+                        <h4>Establish a Sleep Routine</h4>
+                        <p>Go to bed and wake up at the same time every day, even on weekends.</p>
+                    </div>
+
+                    <div class="health-tip">
+                        <h4>Create a Restful Environment</h4>
+                        <p>Keep your bedroom dark, quiet, and cool for better sleep quality.</p>
+                    </div>
+
+                    <div class="health-tip">
+                        <h4>Limit Screen Time Before Bed</h4>
+                        <p>Avoid electronic devices at least one hour before bedtime.</p>
+                    </div>
+
+                    <div class="health-tip">
+                        <h4>Practice Deep Breathing</h4>
+                        <p>Use deep breathing exercises to reduce stress and anxiety throughout the day.</p>
+                    </div>
+
+                    <div class="health-tip">
+                        <h4>Stay Connected</h4>
+                        <p>Maintain social connections with friends and family for emotional well-being.</p>
+                    </div>
+
+                    <div class="health-tip">
+                        <h4>Take Mental Health Breaks</h4>
+                        <p>Schedule short breaks during the day to relax and recharge mentally.</p>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">
+                        <i class="fas fa-newspaper"></i>
+                        Latest Drug News
+                    </h3>
+                    <div class="news-container" id="drugNews">
+                        <div class="news-loading">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            Loading latest drug news...
+                        </div>
+                    </div>
+                    <div class="news-footer">
+                        <div>
+                            <small>Updated: <span id="newsUpdateTime">-</span></small>
+                        </div>
+                        <button class="btn-refresh" id="refreshNews" title="Refresh News">
+                            <i class="fas fa-sync-alt"></i> Refresh
+                        </button>
+                    </div>
+                </div>
+                
+
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Quick Access</h3>
+                    <ul class="sidebar-list">
+                        <li><i class="fas fa-history"></i> Recently Viewed Drugs</li>
+                        <li><i class="fas fa-heart"></i> Saved Medications</li>
+                        <li><i class="fas fa-print"></i> Print Drug Info</li>
+                    </ul>
+                </div>
+
+
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Recent Updates</h3>
+                    <div class="update-item">
+                        <div class="update-date">Nov 25, 2025</div>
+                        <div class="update-content">The bug that caused issues on the website has been completely resolved and everything is running smoothly now.</div>
+                    </div>
+                    <div class="update-item">
+                        <div class="update-date">Nov 25, 2025</div>
+                        <div class="update-content">Mobile app now available for download</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Our Mission</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="scroll-link" data-target="drugSearch">Drug Search</a></li>
+                        <li><a href="https://www.healthwords.ai/?utm_source=google&utm_medium=paid&utm_campaign=22540463031&utm_content=&utm_term=&gad_source=1&gad_campaignid=22546873175&gbraid=0AAAAAohr_Ggugl_OloX7euD7gKnNncwN0&gclid=CjwKCAjwmNLHBhA4EiwA3ts3mSqPKWxpk0cwAwm2yJcdmlzwtAigvrasUD67PpR3WCtzbXVeQHo4choCQcIQAvD_BwE">Symptom Checker</a></li>
+                        <li><a href="https://www.knowyourdoctor.com">Find a Doctor</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Health Articles</a></li>
+                        <li><a href="#">Medical Dictionary</a></li>
+                        <li><a href="#">Drug Library</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column" id="sub">
+                    <h3>Connect With Us</h3>
+                    <p>Share your questions, suggestions, and feedback with us.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2025 MediGuide - All rights reserved. Information provided on this site does not replace medical consultation.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for Drug Information -->
+    <div class="modal-overlay" id="drugModal">
+        <div class="drug-modal">
+            <div class="modal-header">
+                <h2 id="modalDrugName">Drug Name</h2>
+                <button class="close-btn" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="warning">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Important Safety Information</h4>
+                    <p id="safetyInfo">-</p>
+                </div>
+                <div class="drug-basic-info">
+                
+                    <div class="info-item">
+                        <span class="info-label">Drug Class</span>
+                        <span class="info-value" id="drugClass">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Brand Names</span>
+                        <span class="info-value" id="brandNames">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Administration</span>
+                        <span class="info-value" id="administration">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Half-Life</span>
+                        <span class="info-value" id="halfLife">-</span>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h3>Uses and Indications</h3>
+                    <p id="drugUses">-</p>
+                </div>
+
+                <div class="info-section">
+                    <h3>Conditions</h3>
+                    <p id="drugCond">-</p>
+                </div>
+
+                <div class="info-section">
+                    <h3>Dosage Information</h3>
+                    <p id="dosageInfo">-</p>
+                </div>
+
+                <div class="info-section">
+                    <h3>Side Effects</h3>
+                    <ul class="info-list" id="sideEffects">
+                        <!-- Will be populated by JavaScript -->
+                    </ul>
+                </div>
+
+                <div class="info-section">
+                    <h3>Drug Interactions</h3>
+                    <ul class="info-list" id="drugInteractions">
+                        <!-- Will be populated by JavaScript -->
+                    </ul>
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" title="Go to top">
+    <img src="sticker.png" alt="Go to top" />
+    </button>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
