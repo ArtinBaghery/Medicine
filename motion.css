@@ -1,0 +1,56 @@
+/* Motion system: transform-only depth, bounded pointer feedback, accessible still state. */
+.hero-art{perspective:1000px;--scene-x:0deg;--scene-y:0deg}
+.hero-scene{position:absolute;inset:0;display:grid;place-items:center;transform:rotateX(var(--scene-x)) rotateY(var(--scene-y));transition:transform .65s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d}
+.hero-art:before{inset:auto;width:310px;height:310px;left:50%;top:50%;translate:-50% -50%;background:radial-gradient(circle at 35% 25%,#edf1de,#b6d0a5);box-shadow:0 0 0 24px #93b08c08,0 0 0 50px #93b08c05;animation:halo-breathe 9s ease-in-out infinite}
+.hero-scene .art-cross{animation:cross-suspend 9s ease-in-out infinite;box-shadow:12px 19px 22px #254b3430;transform-origin:center}
+.hero-scene .art-cross:after{animation:cross-light 9s ease-in-out infinite}
+.hero-scene .orbit{z-index:-1;border-color:#8fad8260;animation:orbit-turn 38s linear infinite}
+.hero-scene .orbit-two{animation-duration:49s;animation-direction:reverse;border-style:dashed;border-color:#8fad8238}
+.orbit-satellite{position:absolute;top:50%;left:-4px;width:7px;height:7px;border-radius:50%;background:#9fbb87;box-shadow:0 0 0 5px #a8bd8515,0 0 16px #a8bd8555}
+.orbit-two .orbit-satellite{left:auto;right:-3px;width:5px;height:5px;background:#609b7c}
+.hero-scene .pill-one{animation:capsule-suspend 7.5s ease-in-out infinite}
+.hero-scene .pill-two{animation:capsule-suspend 9s ease-in-out -3s infinite reverse}
+.hero-scene .art-tag{animation:tag-suspend 8s ease-in-out infinite;transform:translateZ(24px)}
+.hero-scene .tag-two{animation-duration:10s;animation-delay:-4s}
+.hero-scene .mini-star{animation:star-glimmer 6s ease-in-out infinite}.hero-scene .star-two{animation-delay:-3s}
+.hero-art.motion-offscreen *, .hero-art.motion-offscreen:before{animation-play-state:paused!important}
+@keyframes cross-suspend{0%,100%{transform:translate3d(0,3px,28px) rotate(-10deg)}50%{transform:translate3d(0,-10px,28px) rotate(-4deg)}}
+@keyframes cross-light{0%,100%{opacity:.5}50%{opacity:1}}
+@keyframes orbit-turn{to{rotate:360deg}}
+@keyframes capsule-suspend{0%,100%{translate:0 0;rotate:-3deg}50%{translate:4px -16px;rotate:5deg}}
+@keyframes tag-suspend{0%,100%{translate:0 0}50%{translate:0 -6px}}
+@keyframes star-glimmer{0%,100%{opacity:.5;scale:.9;rotate:0deg}50%{opacity:1;scale:1.12;rotate:14deg}}
+@keyframes halo-breathe{0%,100%{scale:1;opacity:.85}50%{scale:1.035;opacity:1}}
+.category{--px:50%;--py:50%;--rx:0deg;--ry:0deg;isolation:isolate;overflow:hidden;transform-style:flat;transition:transform .45s cubic-bezier(.18,.75,.2,1),box-shadow .4s,border-color .3s,background .3s}
+.category:before{content:'';position:absolute;inset:0;border-radius:inherit;background:radial-gradient(170px circle at var(--px) var(--py),#9dbd7950,transparent 75%);opacity:0;transition:opacity .35s;z-index:-1;pointer-events:none}
+.category:after{content:'';position:absolute;inset:0;border-radius:inherit;border:1px solid #a6c78d55;opacity:0;transition:opacity .3s;pointer-events:none}
+.category-symbol{transition:transform .5s cubic-bezier(.18,.9,.25,1.3),box-shadow .4s;position:relative}
+.category-symbol .icon{transition:transform .45s cubic-bezier(.18,.9,.25,1.3)}
+.category-arrow{transition:transform .35s,color .3s;opacity:.7}
+.category-text{transition:transform .35s}.category.selected:after{opacity:1}
+.category:focus-visible:before{opacity:1}.category:focus-visible .category-symbol{transform:rotate(-7deg) scale(1.08)}
+.category:focus-visible .category-arrow{transform:translate(3px,-3px);color:var(--green)}
+@media(hover:hover) and (pointer:fine){
+.category:hover{transform:perspective(800px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(-5px);box-shadow:0 14px 28px #174b3d16,0 2px 5px #174b3d06;border-color:#91b78c}
+.category:hover:before,.category:hover:after{opacity:1}.category:hover .category-symbol{transform:translateY(-2px) rotate(-8deg) scale(1.08);box-shadow:0 5px 12px #174b3d12}
+.category:hover .category-symbol .icon{transform:rotate(8deg) scale(1.08)}.category:hover .category-arrow{transform:translate(3px,-4px);color:var(--green);opacity:1}.category:hover .category-text{transform:translateX(2px)}
+.category:active{transform:translateY(-1px) scale(.985);transition-duration:.1s}
+.primary,.secondary,.filter-button,.icon-button{transition:transform .25s,box-shadow .25s,background .25s}.primary:hover,.secondary:hover{transform:translateY(-3px);box-shadow:0 9px 22px #174b3d20}.primary .icon,.secondary .icon{transition:transform .3s}.primary:hover .icon,.secondary:hover .icon{transform:translateX(4px)}
+.filter-button:hover,.icon-button:hover{transform:translateY(-2px)}.primary:active,.secondary:active,.filter-button:active,.icon-button:active{transform:scale(.97)}
+}
+.entry{animation:guide-arrive .42s cubic-bezier(.2,.7,.2,1) both}.entry .save-entry{transition:transform .25s,background .25s}.entry .save-entry[aria-pressed=true] .icon{animation:bookmark-pop .32s ease-out}
+.tabs button{position:relative;transition:color .25s,background .25s}.tabs button[aria-selected=true]{animation:tab-arrive .35s ease-out}
+dialog[open]{animation:reader-open .28s cubic-bezier(.2,.8,.2,1)}dialog::backdrop{animation:backdrop-in .25s ease-out}
+@keyframes guide-arrive{from{opacity:0;transform:translateY(13px) scale(.985)}to{opacity:1;transform:none}}
+@keyframes bookmark-pop{50%{transform:scale(1.22)}to{transform:scale(1)}}
+@keyframes tab-arrive{from{background:var(--soft)}to{background:transparent}}
+@keyframes reader-open{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes backdrop-in{from{opacity:0}to{opacity:1}}
+@media(max-width:760px){.hero-art:before{width:270px;height:270px}.hero-scene{transform:none}.hero-scene .orbit-one{animation-duration:55s}.hero-scene .orbit-two{animation-duration:65s}}
+/* Stop pointer depth as well as decorative loops when motion is paused. */
+.motion-paused .hero-scene,.motion-paused .category,.motion-paused .category-symbol,.motion-paused .category-symbol .icon,.motion-paused .category-text,.motion-paused .category-arrow{transform:none!important}
+.motion-paused *, .motion-paused *:before,.motion-paused *:after{animation:none!important;transition:none!important}
+@media(prefers-reduced-motion:reduce){.hero-scene,.category,.category-symbol,.category-symbol .icon,.category-text,.category-arrow{transform:none!important}*,*:before,*:after{animation:none!important;transition:none!important}}
+.hero-art.motion-tab-hidden *, .hero-art.motion-tab-hidden:before{animation-play-state:paused!important}
+
+.category-arrow .icon{width:16px;height:16px;rotate:-45deg}
